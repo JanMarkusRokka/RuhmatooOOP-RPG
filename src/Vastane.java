@@ -1,14 +1,20 @@
 public class Vastane {
+    private int maxEluPunktid;
     private int eluPunktid;
-    private double löögiVõimekus;
+    private int löögiVõimekus;
     private int kaitseVõimekus;
     private String nimi;
 
-    public Vastane(int eluPunktid, double löögiVõimekus, int kaitseVõimekus, String nimi) {
+    public Vastane(int maxEluPunktid, int eluPunktid, int löögiVõimekus, int kaitseVõimekus, String nimi) {
+        this.maxEluPunktid = maxEluPunktid;
         this.eluPunktid = eluPunktid;
         this.löögiVõimekus = löögiVõimekus;
         this.kaitseVõimekus = kaitseVõimekus;
         this.nimi = nimi;
+    }
+
+    public int getMaxEluPunktid() {
+        return maxEluPunktid;
     }
 
     public int getEluPunktid() {
@@ -19,11 +25,11 @@ public class Vastane {
         this.eluPunktid = eluPunktid;
     }
 
-    public double getLöögiVõimekus() {
+    public int getLöögiVõimekus() {
         return löögiVõimekus;
     }
 
-    public void setLöögiVõimekus(double löögiVõimekus) {
+    public void setLöögiVõimekus(int löögiVõimekus) {
         this.löögiVõimekus = löögiVõimekus;
     }
 

@@ -28,8 +28,8 @@ public class Peaklass {
 
         TekstiMeetodid.TavalineTähthaavalVäljund("Metsa viib aastakümnetega sissetallutud jalgrada, selle ees silt: ");
         TekstiMeetodid.TavalineVäljund("-".repeat(11));
-        TekstiMeetodid.TavalineVäljund("| " + "HOIATUS" + " |");
-        TekstiMeetodid.TavalineVäljund("|" + "KOLET*S*D" + "|");
+        TekstiMeetodid.TavalineVäljund("| " + "HO/ATUs" + " |");
+        TekstiMeetodid.TavalineVäljund("|" + "KoLET|SED" + "|");
         TekstiMeetodid.TavalineVäljund("-".repeat(11));
 
         TekstiMeetodid.LugemisePunkt(s);
@@ -56,24 +56,24 @@ public class Peaklass {
         if (linna.equals("1")) {
             TekstiMeetodid.TavalineTähthaavalVäljund("Kontrollides oma taskuid, leiad sa 5 kõlisevat pronksmünti");
             TekstiMeetodid.AeglaneVäljund("...Aeg...möödub...");
-            //rest of the game
+            LooAreng looAreng = new LooAreng(mängija, s);
+            looAreng.Algus();
         }
         else {
-            TekstiMeetodid.TavalineTähthaavalVäljund("Kuna mõtled, et sul niikuinii raha ei ole, siis pole vist hetkel mõtet linna hakata minema.");
             TekstiMeetodid.TavalineTähthaavalVäljund("Lausud: 'Ei, ma vist saan siin ise hakkama. Aga tänan pakkumast.'");
             TekstiMeetodid.TavalineTähthaavalVäljund("Mees mõtleb korra\n'Nu kui sa nii ärväd...'\nning asub edasi liikuma, lahkudes vaikselt sumbuva kapjade klabinaga.");
 
             TekstiMeetodid.LugemisePunkt(s);
 
             TekstiMeetodid.TavalineTähthaavalVäljund("Kuna sul on vaja midagi süüa leida, otsustad minna metsa jahile.");
-            TekstiMeetodid.TavalineTähthaavalVäljund("Metsas on küllaltki palju külmem ning on näha, kuidas päike hakkab taevast horisondi taha langema.");
+            TekstiMeetodid.TavalineTähthaavalVäljund("Metsas on küllaltki palju külmem ning on näha, kuidas päike hakkab taevast horisondi taha vajuma.");
 
             TekstiMeetodid.LugemisePunkt(s);
 
             TekstiMeetodid.TavalineTähthaavalVäljund("Peale lühikest aega ajutise varjualuse ehitamist, kuuled enda ümber oksade raginat.");
             TekstiMeetodid.AeglaneVäljund("...raks...");
 
-            TekstiMeetodid.TavalineTähthaavalVäljund("Järsku hüppab põõsast välja verejanune hunt, kes tormab otsejoones sinu poole.");
+            TekstiMeetodid.TavalineTähthaavalVäljund("Järsku hüppab põõsast välja haavatud verejanune hunt, kes tormab otsejoones sinu poole.");
 
             TekstiMeetodid.TavalineVäljund("[1. Põgened/2. Võitled]");
 
@@ -86,10 +86,27 @@ public class Peaklass {
 
                 TekstiMeetodid.LugemisePunkt(s);
                 TekstiMeetodid.TavalineTähthaavalVäljund("Leiad end uuesti tee juures ning otsustad minna hobukaariku jälgedes, sest tundub, et kohalik loodus sind ei salli.");
-                //rest of the game
+                TekstiMeetodid.AeglaneVäljund("...Aeg...möödub...");
+                LooAreng looAreng = new LooAreng(mängija, s);
+                looAreng.Algus();
             }
             else {
+                Hunt hunt = new Hunt();
+                Võitlus võitlus = new Võitlus(mängija, hunt, s);
+                võitlus.Algus();
+                mängija.lisaVarustust("hundinahk");
+                TekstiMeetodid.TavalineTähthaavalVäljund("Elasid kuidagi selle õudusunenäo üle, kuid vähemalt said endale hundinaha");
+                TekstiMeetodid.TavalineTähthaavalVäljund("Otsutad, et enam pole metsas ööbimine eriti tark idee ja suundud metsast välja.");
 
+                TekstiMeetodid.LugemisePunkt(s);
+
+                TekstiMeetodid.TavalineTähthaavalVäljund("Metsast välja jõudes avastad end viimase päikesevalguse käes sama tee juures, kus üles ärkasid.");
+                TekstiMeetodid.TavalineTähthaavalVäljund("Hakkad sammuma mööda teed lähima asustuse poole, lootusega, et enam SEDA ei juhtu.");
+
+                TekstiMeetodid.LugemisePunkt(s);
+
+                LooAreng looAreng = new LooAreng(mängija, s);
+                looAreng.Algus();
             }
 
         }
@@ -98,7 +115,23 @@ public class Peaklass {
         //TekstiMeetodid.TavalineTähthaavalVäljund("Tere tulemast, " + mängija.getNimi() + ", siia ilusasse maailma!");
     }
 
+    public static void testVõitlus() throws InterruptedException {
+        Scanner s = new Scanner(System.in);
+        Mängija mängija = new Mängija("Jaan");
+        Hunt hunt = new Hunt();
+        Võitlus võitlus = new Võitlus(mängija, hunt, s);
+        võitlus.Algus();
+    }
+
+    public static void testEpisood() throws InterruptedException {
+        Scanner s = new Scanner(System.in);
+        Mängija mängija = new Mängija("Jaan");
+        LooAreng looAreng = new LooAreng(mängija, s);
+        looAreng.Algus();
+    }
+
     public static void main(String[] args) throws InterruptedException  {
         algus();
+        //testEpisood();
     }
 }

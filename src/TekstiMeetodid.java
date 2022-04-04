@@ -36,10 +36,10 @@ public class TekstiMeetodid {
         for (int i = 0; i < võimalikudSisendid.length; i++) {
             sisendid.add(võimalikudSisendid[i]);
         }
+        TavalineVäljund("Sisesta üks väärtustest: " + sisendid);
         String sisend = scanner.nextLine();
         while (!sisendid.contains(sisend)) {
             sisend = scanner.nextLine();
-            TavalineVäljund("Sisesta üks väärtustest: " + sisendid);
         }
         return sisend;
     }
@@ -48,6 +48,4 @@ public class TekstiMeetodid {
         System.out.println("[VAJUTA ENTER]");
         scanner.nextLine();
     }
-
-
 }

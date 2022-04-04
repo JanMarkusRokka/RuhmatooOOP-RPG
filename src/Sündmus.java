@@ -1,4 +1,5 @@
+import java.util.Scanner;
+
 public interface Sündmus {
-    public void Algus();
-    public void Lõpp();
+    public void Algus() throws InterruptedException;
 }
