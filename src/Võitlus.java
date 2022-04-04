@@ -81,6 +81,7 @@ public class Võitlus implements Sündmus {
             TekstiMeetodid.AeglaneVäljund("Mäng läbi...");
             TekstiMeetodid.TavalineTähthaavalVäljund("Uuesti alustamiseks vajuta [ENTER]");
             TekstiMeetodid.TavalineSisend(scanner);
+            Peaklass.algus();
         }
         TekstiMeetodid.TavalineTähthaavalVäljund("-".repeat(20));
     }

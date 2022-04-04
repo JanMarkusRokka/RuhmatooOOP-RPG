@@ -96,7 +96,7 @@ public class Peaklass {
                 võitlus.Algus();
                 mängija.lisaVarustust("hundinahk");
                 TekstiMeetodid.TavalineTähthaavalVäljund("Elasid kuidagi selle õudusunenäo üle, kuid vähemalt said endale hundinaha");
-                TekstiMeetodid.TavalineTähthaavalVäljund("Otsutad, et enam pole metsas ööbimine eriti tark idee ja suundud metsast välja.");
+                TekstiMeetodid.TavalineTähthaavalVäljund("Otsustad, et enam pole metsas ööbimine eriti tark idee ja suundud metsast välja.");
 
                 TekstiMeetodid.LugemisePunkt(s);
 
@@ -127,11 +127,12 @@ public class Peaklass {
         Scanner s = new Scanner(System.in);
         Mängija mängija = new Mängija("Jaan");
         LooAreng looAreng = new LooAreng(mängija, s);
-        looAreng.Algus();
+        LooAreng.kõrtsiSaabumine();
     }
 
     public static void main(String[] args) throws InterruptedException  {
-        algus();
-        //testEpisood();
+        //algus();
+        testEpisood();
+
     }
 }
