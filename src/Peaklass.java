@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 
-
 public class Peaklass {
 
     public static void algus() throws InterruptedException {
@@ -51,15 +50,14 @@ public class Peaklass {
 
         TekstiMeetodid.TavalineVäljund("[1. Lähed temaga linna/2. Lähed metsa]");
 
-        String linna = TekstiMeetodid.KindelSisend(s, new String[] {"1", "2"});
+        String linna = TekstiMeetodid.KindelSisend(s, new String[]{"1", "2"});
 
         if (linna.equals("1")) {
             TekstiMeetodid.TavalineTähthaavalVäljund("Kontrollides oma taskuid, leiad sa 5 kõlisevat pronksmünti");
             TekstiMeetodid.AeglaneVäljund("...Aeg...möödub...");
             LooAreng looAreng = new LooAreng(mängija, s);
             looAreng.Algus();
-        }
-        else {
+        } else {
             TekstiMeetodid.TavalineTähthaavalVäljund("Lausud: 'Ei, ma vist saan siin ise hakkama. Aga tänan pakkumast.'");
             TekstiMeetodid.TavalineTähthaavalVäljund("Mees mõtleb korra\n'Nu kui sa nii ärväd...'\nning asub edasi liikuma, lahkudes vaikselt sumbuva kapjade klabinaga.");
 
@@ -77,7 +75,7 @@ public class Peaklass {
 
             TekstiMeetodid.TavalineVäljund("[1. Põgened/2. Võitled]");
 
-            String valik = TekstiMeetodid.KindelSisend(s, new String[] {"1","2"});
+            String valik = TekstiMeetodid.KindelSisend(s, new String[]{"1", "2"});
 
             if (valik.equals("1")) {
                 TekstiMeetodid.TavalineTähthaavalVäljund("Otsustad joosta ning sprindid viimase valguse poole.");
@@ -89,8 +87,7 @@ public class Peaklass {
                 TekstiMeetodid.AeglaneVäljund("...Aeg...möödub...");
                 LooAreng looAreng = new LooAreng(mängija, s);
                 looAreng.Algus();
-            }
-            else {
+            } else {
                 Hunt hunt = new Hunt();
                 Võitlus võitlus = new Võitlus(mängija, hunt, s);
                 võitlus.Algus();
@@ -130,7 +127,7 @@ public class Peaklass {
         LooAreng.kõrtsiSaabumine();
     }
 
-    public static void main(String[] args) throws InterruptedException  {
+    public static void main(String[] args) throws InterruptedException {
         //algus();
         testEpisood();
 

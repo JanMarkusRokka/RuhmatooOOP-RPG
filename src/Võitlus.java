@@ -19,7 +19,7 @@ public class Võitlus implements Sündmus {
 
         while (mängija.getElupunktid()>0 && vastane.getEluPunktid()>0) {
             TekstiMeetodid.TavalineVäljund(mängija.getNimi() + " elusid " + mängija.getElupunktid() + "|" + vastane.getNimi() + " elusid " + vastane.getEluPunktid());
-            TekstiMeetodid.TavalineTähthaavalVäljund("[1. Tavaline rünnak/2. Tugev rünnak/3. Kaitsmine]");
+            TekstiMeetodid.TavalineTähthaavalVäljund("[1] Tavaline rünnak\n[2] Tugev rünnak\n[3] Kaitsmine");
             String sisend = TekstiMeetodid.KindelSisend(this.scanner, new String[] {"1","2","3"});
 
             int rünnak = 0;

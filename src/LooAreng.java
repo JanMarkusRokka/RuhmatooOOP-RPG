@@ -13,8 +13,8 @@ public class LooAreng implements Sündmus {
         int koputamisteArv = 0;
         Scanner s = new Scanner(System.in);
 
-        TekstiMeetodid.TavalineTähthaavalVäljund("Oled jõudnud kohta, mis meenutab tavalisest veidike suuremat keskaegset küla."); // <-- implies et ta pole ise keskajast pärit seega isekai???
-        TekstiMeetodid.TavalineTähthaavalVäljund("Kuna päike hakkab juba looja jõudma, on sul vaja varsti öömaja leida.");
+        TekstiMeetodid.TavalineTähthaavalVäljund("Oled jõudnud kohta, mis meenutab tavalisest veidike suuremat keskaegset küla.");
+        TekstiMeetodid.TavalineTähthaavalVäljund("Kuna päike hakkab juba looja jõudma, on sul varsti vaja öömaja leida.");
 
         TekstiMeetodid.LugemisePunkt(s);
 
@@ -24,29 +24,26 @@ public class LooAreng implements Sündmus {
         TekstiMeetodid.TavalineTähthaavalVäljund("Leiad väikse onni mille aknast lõõmab kerge valgus.");
 
         while (true) {
-            TekstiMeetodid.TavalineTähthaavalVäljund("Kuidas soovid käituda?");
-
-            TekstiMeetodid.TavalineVäljund("[1] Koputad uksele \n[2] Katsud ukselinki \n[3] Kõnnid edasi");
+            TekstiMeetodid.TavalineVäljund("[1] Koputa uksele \n[2] Katsu ukselinki \n[3] Kõnni edasi");
             String uks = TekstiMeetodid.KindelSisend(s, new String[]{"1", "2", "3"});
 
             if (uks.equals("1")) {
                 koputamisteArv++;
-                if (koputamisteArv == 1) {
-                    TekstiMeetodid.AeglaneVäljund("Kop-kop-ko..");
-                    TekstiMeetodid.TavalineTähthaavalVäljund("Sa ei jõua koputamist lõpetatagi enne kui ukse vahelt pistab oma nina välja üks rusunud vana mees:");
-                    TekstiMeetodid.TavalineTähthaavalVäljund("'Äh messa tahad?'");
-                    TekstiMeetodid.TavalineTähthaavalVäljund("'Keri minema siit sa rõve kerjus!'");
-
-                } else if (koputamisteArv == 2 || koputamisteArv > 3) {
+                if (koputamisteArv == 1 || koputamisteArv > 3) {
                     TekstiMeetodid.AeglaneVäljund("Kop-kop-kop");
                     TekstiMeetodid.TavalineTähthaavalVäljund("*Vaikus*");
 
-                } else if (koputamisteArv == 3) {
+                } else if (koputamisteArv == 2 ) {
                     TekstiMeetodid.AeglaneVäljund("Kop-ko..");
-                    TekstiMeetodid.TavalineTähthaavalVäljund("Ukse alt libiseb 5 hõbemünti"); // võid siin täpsustada seda raha
+                    TekstiMeetodid.TavalineTähthaavalVäljund("Sa ei jõua koputamist lõpetatagi enne kui ukse vahelt pistab nina välja üks rusunud vana mees:");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("'Äh messa tahad? — Jälle mingid rõvedad kerjused!'");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("*Uks läheb pauguga kinni ja keeratakse lukku*");
 
+                } else if (koputamisteArv == 3) {
+                    TekstiMeetodid.AeglaneVäljund("Kop-kop-kop");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("*Ukse alt libiseb 5 hõbemünti*"); // võid siin täpsustada seda raha
+                    TekstiMeetodid.TavalineTähthaavalVäljund("\033[3mTa vist ikka väga tahab, et teda rahule jäetaks.\033[0m");
                 }
-
 
             } else if (uks.equals("2")) {
                 // kui uksele on koputatud, siis enam sisse ei pääse (vanamees pani ukse lukku)
@@ -55,23 +52,49 @@ public class LooAreng implements Sündmus {
 
                 } else {
 
-                    TekstiMeetodid.TavalineTähthaavalVäljund("Katsud linki ja saad aru et uks on avatud");
-                    TekstiMeetodid.TavalineTähthaavalVäljund("Kudias käitud?");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("Katsud linki ja saad aru et uks on avatud.");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("Sa avad ukse ja sisened.");
 
-                    TekstiMeetodid.TavalineTähthaavalVäljund("[1] Hüüad: 'Kas keegi on siin?' \n[2] Sisened onni");
+                    TekstiMeetodid.TavalineTähthaavalVäljund("[1] 'Kas keegi on siin?'\n[2] Vaata ringi");
 
                     String link = TekstiMeetodid.KindelSisend(s, new String[]{"1", "2"});
 
                     if (link.equals("1")) {
-                        // vanamees läheb närvi ja pussitab su ära, insert dark souls 'u died'
-                        break;
+
+                        TekstiMeetodid.TavalineTähthaavalVäljund("'Kas keegi on siin?'");
+                        TekstiMeetodid.AeglaneVäljund("...");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Silmapilgselt ilmub su ette üks kummaline mehike.");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Sa üritad teha häält, kuid ükski lihas su kehas ei suuda liikuda.");
+                        TekstiMeetodid.AeglaneVäljund("Mäng läbi...");
+
+                        TekstiMeetodid.LugemisePunkt(s);
+                        Peaklass.algus();
+                        // mäng algab uuesti
+
                     } else {
-                        // leiad pimedas mingi asja ja tõmbad nahhuj
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Sa otsustad veidi ringi vaadata.");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Onni seinad on väga määrdunud ja ringi kõndides su jalad justkui kleepuvad maapinna külge.");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Hais, mis sa tunned põletab su nina ja sa ei taha enam kaua siin viibida.");
+
+                        TekstiMeetodid.LugemisePunkt(s);
+
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Osmik on täis ainult risu, kuid sulle torkab valusalt silma üks raamat.");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Sa pühid raamatult tolmu ja näed pealkirja: ");
+                        TekstiMeetodid.TavalineTähthaavalVäljund("~☆* Loitsude Raamat *☆~");
+                        // edaspidi lisame raamatu varustuse hulka
+
+                        TekstiMeetodid.TavalineTähthaavalVäljund("Haarad kiirelt raamatu ja lahkud sellest kummalisest paigast koheselt.");
+
+                        TekstiMeetodid.LugemisePunkt(s);
+
                         break;
                     }
                 }
 
             } else {
+                if (koputamisteArv == 0) {
+                    TekstiMeetodid.TavalineTähthaavalVäljund("*Sa ignoreerid onni ja jätkad kõndimist*");
+                }
                 break;
             }
         }
@@ -84,7 +107,7 @@ public class LooAreng implements Sündmus {
         TekstiMeetodid.TavalineTähthaavalVäljund("Sa näed maja peal rippumas silti: ");
 
         TekstiMeetodid.TavalineVäljund("-".repeat(26));
-        TekstiMeetodid.TavalineVäljund("| ☆ Suure Tõlla Kõrts ☆ |"); // seda nime võib muuta ka XD
+        TekstiMeetodid.TavalineVäljund("| ☆ Suure Tõlla Kõrts ☆ |");
         TekstiMeetodid.TavalineVäljund("-".repeat(26));
 
         TekstiMeetodid.LugemisePunkt(s);
@@ -93,9 +116,7 @@ public class LooAreng implements Sündmus {
 
         TekstiMeetodid.AeglaneVäljund("...");
 
-        TekstiMeetodid.TavalineTähthaavalVäljund("This is teh end of demo version pay 10 dolla to get the full experience: ");
-        TekstiMeetodid.AeglaneVäljund("EE912200221048806582");
-
+        TekstiMeetodid.TavalineTähthaavalVäljund("Siin on algversiooni lõpp.");
     }
 
     @Override

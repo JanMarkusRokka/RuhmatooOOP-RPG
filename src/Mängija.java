@@ -49,7 +49,7 @@ public class Mängija {
 
     public int ründeJõud() {
         if (varustus.size() == 0) {
-            return (int) Math.round(Math.random() * 3)+2;
+            return (int) Math.round(Math.random() * 3) + 2;
         }
         return 0;
     }
