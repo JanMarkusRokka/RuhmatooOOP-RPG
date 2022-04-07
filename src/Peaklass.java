@@ -108,8 +108,6 @@ public class Peaklass {
 
         }
 
-
-        //TekstiMeetodid.TavalineTähthaavalVäljund("Tere tulemast, " + mängija.getNimi() + ", siia ilusasse maailma!");
     }
 
     public static void testVõitlus() throws InterruptedException {
@@ -124,12 +122,12 @@ public class Peaklass {
         Scanner s = new Scanner(System.in);
         Mängija mängija = new Mängija("Jaan");
         LooAreng looAreng = new LooAreng(mängija, s);
-        LooAreng.kõrtsiSaabumine();
+        looAreng.kõrtsiSaabumine();
     }
 
     public static void main(String[] args) throws InterruptedException {
-        //algus();
-        testEpisood();
+        algus();
+        //testEpisood();
 
     }
 }

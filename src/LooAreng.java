@@ -9,9 +9,8 @@ public class LooAreng implements Sündmus {
         this.s = s;
     }
 
-    public static void kõrtsiSaabumine() throws InterruptedException {
+    public void kõrtsiSaabumine() throws InterruptedException {
         int koputamisteArv = 0;
-        Scanner s = new Scanner(System.in);
 
         TekstiMeetodid.TavalineTähthaavalVäljund("Oled jõudnud kohta, mis meenutab tavalisest veidike suuremat keskaegset küla.");
         TekstiMeetodid.TavalineTähthaavalVäljund("Kuna päike hakkab juba looja jõudma, on sul varsti vaja öömaja leida.");
@@ -81,10 +80,9 @@ public class LooAreng implements Sündmus {
                         TekstiMeetodid.TavalineTähthaavalVäljund("Osmik on täis ainult risu, kuid sulle torkab valusalt silma üks raamat.");
                         TekstiMeetodid.TavalineTähthaavalVäljund("Sa pühid raamatult tolmu ja näed pealkirja: ");
                         TekstiMeetodid.TavalineTähthaavalVäljund("~☆* Loitsude Raamat *☆~");
-                        // edaspidi lisame raamatu varustuse hulka
 
                         TekstiMeetodid.TavalineTähthaavalVäljund("Haarad kiirelt raamatu ja lahkud sellest kummalisest paigast koheselt.");
-
+                        this.mängija.lisaVarustust("Loitsude Raamat");
                         TekstiMeetodid.LugemisePunkt(s);
 
                         break;
@@ -122,6 +120,6 @@ public class LooAreng implements Sündmus {
     @Override
     public void Algus() throws InterruptedException {
         //Edaspidised episoodid (peale terve mängu algust) tulevad siia.
-        kõrtsiSaabumine();
+        this.kõrtsiSaabumine();
     }
 }
